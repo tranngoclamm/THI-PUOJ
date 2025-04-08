@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+    <title>Tìm mã chuẩn - PUOJ: Phenikaa University Online Judge</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" property="og:description" content="Cho ~n~ xâu ký tự">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" sizes="57x57" href="../apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="../favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="../favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://puoj.phenikaa-uni.edu.vn/manifest.json">
+    <meta name="msapplication-TileColor" content="#231F20">
+    <meta name="msapplication-TileImage" content="../mstile-144x144.png">
+    <meta name="theme-color" content="#231F20">
+    <meta property="og:image" content="../logo.png">
+    <meta property="og:site_name" content="PUOJ: Phenikaa University Online Judge">
+    <meta property="og:url" content="https://oj.vnoi.info/problem/beginner_043">
+
+    <link rel="stylesheet" href="../static/cache/css/output.349389e5712a.css" type="text/css">
+    <link rel="canonical" href="https://oj.vnoi.info/problem/beginner_043">
+    <link rel="stylesheet" href="../static/cache/css/output.88c8a2e6d2d3.css" type="text/css" media="all">
+    <link rel="stylesheet" href="./ide_styles.css">
+    <style>
+        .title-state {
+            font-size: 2em;
+            float: left;
+            width: 1.1em;
+            display: block;
+            margin-top: 0.16em;
+        }
+
+        .info-float a {
+            vertical-align: middle;
+        }
+
+        .problem-clarification {
+            border-bottom: 1px solid #ccc;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+
+        .clarifications-area h2 {
+            margin-bottom: 20px;
+        }
+
+        .problem-clarification .body {
+            display: inline-block;
+            padding-left: 3em;
+        }
+
+        #content-right {
+            max-width: 12.5em;
+            min-width: 12.5em;
+        }
+
+        #problem-types,
+        #allowed-langs,
+        #available-judges {
+            padding-top: 1em;
+        }
+
+        .problem-info-entry {
+            padding-top: 0.5em;
+        }
+
+        #raw_problem {
+            visibility: hidden;
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: -999em;
+        }
+    </style>
+
+    <script src="../static/cache/js/output.cdb3460466a3.js"></script>
+    <script src="../static/cache/js/output.d0d0c6c001dc.js"></script>
+    <script src="../static/cache/js/output.8c7a8d426272.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#pdf_button').click(async function (e) {
+                e.preventDefault();
+                if (!$('#raw_problem').attr("src"))
+                    $('#raw_problem').attr("src", "beginner_043/raw");
+
+                while (!$('.math-loaded', frames['raw_problem'].document).length) {
+                    await new Promise(r => setTimeout(r, 200));
+                }
+                frames['raw_problem'].print();
+            });
+        });
+    </script>
+    <script>
+        window.event_dispatcher = new WSEventDispatcher(
+            'wss://puoj.phenikaa-uni.edu.vn/event/',
+            'https://puoj.phenikaa-uni.edu.vn/channels/',
+            1742780727448
+        );
+    </script>
+
+    <script>
+        window.user = {};
+    </script>
+
+
+    <script>
+        function submmit_language(lang) {
+            if (lang != "en") {
+                $("input[name=language]").val(lang)
+                $("#set_language").submit()
+            }
+        }
+    </script>
+    <noscript>
+        <style>
+            #content {
+                margin: 80px auto auto;
+            }
+
+            #navigation {
+                top: 27px;
+            }
+        </style>
+    </noscript>
+</head>
+
+<body>
+    <svg width="0" height="0" style="display: block">
+        <defs>
+            <clipPath id="rating-clip">
+                <circle cx="8" cy="8" r="7" />
+            </clipPath>
+        </defs>
+    </svg>
+    <nav id="navigation" class="unselectable">
+        <div id="nav-container">
+            <a id="navicon" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+            <ul id="nav-list">
+                <li class="home-nav-element"><a href="https://puoj.phenikaa-uni.edu.vn/"> <img
+                            src="https://puoj.phenikaa-uni.edu.vn/static/icons/logo.svg" alt="PUOJ" width="130"
+                            height="40" onerror="this.src=&quot;/static/icons/logo.png&quot;; this.onerror=null"
+                            style="border: none; padding-top: 4px">
+                    </a></li>
+                <li class="home-nav-element"><span class="nav-divider"></span></li>
+                <li class="home-menu-item"><a href="https://puoj.phenikaa-uni.edu.vn/" class="nav-home">Home</a></li>
+                <li>
+                    <a href="https://puoj.phenikaa-uni.edu.vn/problems/" class="nav-problems active">
+                        Problems
+                    </a>
+                </li>
+                <li>
+                    <a href="https://puoj.phenikaa-uni.edu.vn/submissions/" class="nav-submit">
+                        Submissions
+                    </a>
+                </li>
+                <li>
+                    <a href="https://puoj.phenikaa-uni.edu.vn/users/" class="nav-user">
+                        Users
+                    </a>
+                </li>
+                <li>
+                    <a href="https://puoj.phenikaa-uni.edu.vn/organizations/" class="nav-organizati">
+                        Organizations
+                    </a>
+                </li>
+                <li>
+                    <a href="https://puoj.phenikaa-uni.edu.vn/contests/" class="nav-contest">
+                        Contests
+                    </a>
+                </li>
+                <li>
+                    <a href="https://puoj.phenikaa-uni.edu.vn/about/" class="nav-about">
+                        About
+                        <div class="nav-expand">&gt;</div>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="https://puoj.phenikaa-uni.edu.vn/status/" class="nav-status">
+                                Judges
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://puoj.phenikaa-uni.edu.vn/custom_checkers/" class="nav-checkers">
+                                Custom Checkers
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/VNOI-Admin/OJ" class="nav-github">
+                                Github
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <span id="user-links">
+                <a href="https://puoj.phenikaa-uni.edu.vn/accounts/login/?next=/problem/beginner_043/tickets/new"
+                    style="margin-right: 5px;">
+                    <span title="Report issue">
+                        <i class="fa fa-exclamation-triangle" style="color: yellow;"></i>
+                    </span>
+                </a>
+                <a id="flag_vi" href="#" onclick="submmit_language('vi')" style="margin-right: 5px; margin-top: 4px;">
+                    <img src="https://puoj.phenikaa-uni.edu.vn/static/icons/vi_flag.svg" alt="VI" height="24">
+                </a>
+                <a id="flag_en" href="#" onclick="submmit_language('en')" style="margin-right: 5px; margin-top: 4px;">
+                    <img src="https://puoj.phenikaa-uni.edu.vn/static/icons/gb_flag.svg" alt="EN" height="24">
+                </a>
+                <span class="anon">
+                    <a href="https://puoj.phenikaa-uni.edu.vn/accounts/login/?next=/problem/beginner_043"><b>Log
+                            in</b></a>
+                    &nbsp;or&nbsp;
+                    <a href="https://puoj.phenikaa-uni.edu.vn/accounts/register/"><b>Sign up</b></a>
+                </span>
+            </span>
+        </div>
+        <div id="nav-shadow"></div>
+    </nav>
+    <div id="page-container">
+        <noscript>
+            <div id="noscript">This site works best with JavaScript enabled.</div>
+        </noscript>
+        <br>
+        <main id="content">
+            <div class="problem-title">
+                <h2 style="display: inline-block">Tìm mã chuẩn</h2>
+                <span class="spacer"></span>
+                <a id="pdf_button" class="view-pdf" href='#'>
+                    <span class="pdf-icon">
+                        <span class="fa fa-file-pdf-o pdf-icon-logo"></span>
+                        <span class="pdf-icon-bar"></span>
+                    </span>
+                    View as PDF
+                </a>
+                <a onclick="showIde()" class="view-pdf ide-btn" >
+                    <span class="pdf-icon">
+                        <i class="fa fa-code" aria-hidden="true"></i>
+                    </span>
+                    IDE
+                </a>
+            </div>
+            <hr>
+            <div id="content-body">
+                <div id="common-content">
+                    <div id="content-right">
+                        <div class="info-float"> <a
+                                href="https://puoj.phenikaa-uni.edu.vn/accounts/login/?next=/problem/beginner_043/submit"
+                                class="unselectable button full">
+                                Submit solution
+                            </a>
+
+                            <hr style="padding-bottom: 0.3em">
+                            <div><a href="beginner_043/submissions/index.html">All submissions</a></div>
+                            <div><a href="beginner_043/rank/index.html">Best submissions</a></div>
+
+
+
+                            <hr style="padding-top: 0.3em">
+
+                            <div class="problem-info-entry">
+                                <i class="fa fa-check fa-fw"></i><span class="pi-name">Points:</span>
+                                <span class="pi-value">
+                                    1.00 (partial) </span>
+                            </div>
+                            <div class="problem-info-entry">
+                                <i class="fa fa-clock-o fa-fw"></i><span class="pi-name">Time limit:</span>
+                                <span class="pi-value">0.01s</span>
+                            </div>
+                            <div class="problem-lang-limits">
+                            </div>
+                            <div class="problem-info-entry">
+                                <i class="fa fa-server fa-fw"></i><span class="pi-name">Memory limit:</span>
+                                <span class="pi-value">256M</span>
+                            </div>
+                            <div class="problem-lang-limits">
+                            </div>
+                            <div class="problem-info-entry">
+                                <i class="fa fa-keyboard-o fa-fw"></i><span class="pi-name">Input:</span>
+                                <span class="pi-value">stdin</span>
+                            </div>
+                            <div class="problem-info-entry">
+                                <i class="fa fa-print fa-fw"></i><span class="pi-name">Output:</span>
+                                <span class="pi-value">stdout</span>
+                            </div>
+
+                            <hr style="padding-top: 0.7em">
+
+
+
+                            <div id="problem-types">
+                                <div class="toggle closed unselectable">
+                                    <i class="fa fa-chevron-right fa-fw"></i>Problem type </div>
+                                <div style="display:none" class="toggled">Chưa phân loại</div>
+                            </div>
+                            <div id="allowed-langs">
+                                <div class="toggle open unselectable">
+                                    <i class="fa fa-chevron-right fa-fw"></i>Allowed languages
+                                </div>
+                                <div class="toggled">
+                                    C, C++, Java, Kotlin, Pascal, PyPy, Python, Scratch </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div id="content-left" class="split-common-content">
+                        <div class="content-description screen">
+                            <iframe name="raw_problem" id="raw_problem"></iframe>
+
+                            <div>
+                                <p>Cho ~n~ xâu ký tự</p>
+
+                                <p>Hãy in ra xâu chuẩn đầu tiên. Xâu chuẩn là xâu có 10 ký tự toàn các chữ số hay
+                                    không?.</p>
+
+                                <h4>INPUT:</h4>
+
+                                <ul>
+                                    <li>Dòng một là một số nguyên</li>
+                                    <li>~n~ dòng sau, mỗi dòng là một xâu ký tự không có ký tự rỗng.</li>
+                                </ul>
+
+                                <h4>OUTPUT:</h4>
+
+                                <ul>
+                                    <li>Là xâu ký thự đầu tiên đúng, nếu không có xâu chuẩn thì không in ra gì</li>
+                                </ul>
+
+                                <h4>Input:</h4>
+
+                                <pre><code>3
+123231113a
+1233111187
+2321133311
+</code></pre>
+
+                                <h4>Output:</h4>
+
+                                <pre><code>1233111187
+</code></pre>
+
+                                <h4>Giới hạn</h4>
+
+                                <ul>
+                                    <li>0 &lt; n &lt; 1000</li>
+                                </ul>
+                            </div>
+
+                            <hr>
+                        </div>
+                        <div id="comments" class="comment-area">
+                            <h2><i style="padding-right: 0.3em" class="fa fa-comments"></i>Comments</h2>
+                            <div class="alert alert-warning">
+                                Please read the <a href="https://puoj.phenikaa-uni.edu.vn/about/comment/">guidelines</a>
+                                before commenting.
+                            </div>
+                            <hr><br>
+
+                            <p class="no-comments-message">There are no comments at the moment.</p>
+
+
+                        </div>
+                    </div> -->
+                   
+                    <!-- <div id="content-left" class="split-common-content">
+                        <div class="content-description screen">
+                <iframe name="raw_problem" id="raw_problem"></iframe>
+            
+                <div><p>Một sinh viên có các thống số sau:</p>
+            
+            <ul>
+            <li>Mã sinh viên (có 8 ký tự số)</li>
+            <li>Tên sinh viên (nhiều hơn 5 ký tự và không quá 30 ký tự bao gồm ký tự trắng)</li>
+            <li>Điểm GPA (là số thực nằm trong khoảng từ 0 đến 4)</li>
+            </ul>
+            
+            <p>Cho <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container> thông tin sinh viên đã chuẩn.</p>
+            
+            <p>Hãy sắp xếp lại danh sách sinh viên theo thứ tự tăng dần của điểm GPA</p>
+            
+            <h4>INPUT:</h4>
+            
+            <ul>
+            <li>Một dòng duy nhất chứa số nguyên <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container>.</li>
+            <li>Tiếp theo là <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3</mn><mo>∗</mo><mi>n</mi></math></mjx-assistive-mml></mjx-container> dòng chứa thông tin của n sinh viên. Mỗi thông tin của sinh viên sẽ lưu trên một dòng</li>
+            </ul>
+            
+            <h4>OUTPUT:</h4>
+            
+            <ul>
+            <li>In ra mã số sinh viên theo điểm GPA tăng dần, nếu GPA giống nhau thì vẫn giữ thứ tự lúc nhận vào</li>
+            </ul>
+            
+            <h4>Input:</h4>
+            
+            <div class="copy-clipboard"><span class="btn-clipboard" data-clipboard-text="2
+            21223344
+            Nguyen Hoang Duong
+            2.1
+            24334475
+            Bui Minh Duc
+            3.2
+            " title="Click to copy">Copy</span></div><pre><code>2
+            21223344
+            Nguyen Hoang Duong
+            2.1
+            24334475
+            Bui Minh Duc
+            3.2
+            </code></pre>
+            
+            <h4>Output:</h4>
+            
+            <div class="copy-clipboard"><span class="btn-clipboard" data-clipboard-text="21223344 24334475
+            " title="Click to copy">Copy</span></div><pre><code>21223344 24334475
+            </code></pre>
+            
+            <h4>Giới hạn:</h4>
+            
+            <ul>
+            <li><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c30"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>1000</mn></math></mjx-assistive-mml></mjx-container></li>
+            </ul>
+            </div>
+            
+                                <hr>
+                    <a href="/problem/beginner_045/tickets/new" class="button clarify">Báo cáo vấn đề</a>
+                        </div>
+                <div id="comments" class="comment-area">
+                    <h2><i style="padding-right: 0.3em" class="fa fa-comments"></i>Bình luận</h2>
+                        <div class="alert alert-warning">
+                            Hãy đọc <a href="/about/comment/">nội quy</a> trước khi bình luận.
+                        </div>
+                        <hr><br>
+            
+                        <p class="no-comments-message">Không có bình luận tại thời điểm này.</p>
+            
+            
+                        <div id="new-comment" class="form-area comment-submit">
+                                <h3>Bình luận mới</h3>
+                                <hr>
+                                <form class="comment-submit-form" action="" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="QmTLCQcMo9r1ZNCSyVK3uFjFlEo7OyldEFl9tWEFyXmOm3HryGRFTz8PDD50R7n5">                        <input type="hidden" name="parent" id="id_parent">
+                                    <div class="comment-post-wrapper">
+                                        <div id="comment-form-body">
+            <div class="main-martor main-martor-body" data-field-name="body">
+              <div class="section-martor">
+                <div class="ui top attached tabular pointing secondary menu tab-martor-menu">
+                  <a class="item active" data-tab="editor-tab-body"><i class="edit icon"></i> Editor</a>
+                  <a class="item" data-tab="preview-tab-body"><i class="eye icon"></i>Preview</a>
+                  
+            <div class="ui right floated item martor-toolbar">
+              <div class="ui basic tiny icon buttons no-border">
+                <div class="ui icon button no-border markdown-selector markdown-bold" title="Bold (Ctrl+B)" data-field-name="body">
+                  <i class="bold icon"></i>
+                </div>
+                <div class="ui icon button no-border markdown-selector markdown-italic" title="Italic (Ctrl+I)" data-field-name="body">
+                  <i class="italic icon"></i>
+                </div>
+                <div class="ui icon button no-border markdown-selector markdown-horizontal" title="Horizontal Line (Ctrl+H)" data-field-name="body">
+                  <i class="minus icon"></i>
+                </div>
+                <div class="ui icon button top left pointing dropdown no-border" title="Heading" tabindex="0">
+                  <i class="header icon"></i>
+                  <div class="menu" tabindex="-1">
+                    <div class="item markdown-selector markdown-h1" title="" data-field-name="body">Heading 1 (Ctrl+Alt+1)</div>
+                    <div class="item markdown-selector markdown-h2" title="" data-field-name="body">Heading 2 (Ctrl+Alt+2)</div>
+                    <div class="item markdown-selector markdown-h3" title="" data-field-name="body">Heading 3 (Ctrl+Alt+3)</div>
+                  </div>
+                </div>
+            
+                <div class="ui icon button top left pointing dropdown no-border" title="Pre or Code" tabindex="0">
+                  <i class="code icon"></i>
+                  <div class="menu" tabindex="-1">
+                    <div class="item markdown-selector markdown-pre" title="" data-field-name="body">Pre (Ctrl+Alt+P)</div>
+                    <div class="item markdown-selector markdown-code" title="" data-field-name="body">Code (Ctrl+Alt+C)</div>
+                  </div>
+                </div>
+            
+                <div class="ui icon button top left pointing dropdown no-border" title="Math" tabindex="0">
+                  <i class="superscript icon"></i>
+                  <div class="menu" tabindex="-1">
+                    <div class="item markdown-selector markdown-inline-math" title="" data-field-name="body">Inline Math (Ctrl+Alt+I)</div>
+                    <div class="item markdown-selector markdown-display-math" title="" data-field-name="body">Display Math (Ctrl+Alt+D)</div>
+                    <div class="item markdown-selector markdown-latex" title="" data-field-name="body">LaTeX (Ctrl+Alt+L)</div>
+                  </div>
+                </div>
+            
+                <div class="ui icon button no-border markdown-selector markdown-blockquote" title="Quote (Ctrl+Q)" data-field-name="body">
+                  <i class="quote left icon"></i>
+                </div>
+                <div class="ui icon button no-border markdown-selector markdown-unordered-list" title="Unordered List (Ctrl+U)" data-field-name="body">
+                  <i class="unordered list icon"></i>
+                </div>
+                <div class="ui icon button no-border markdown-selector markdown-ordered-list" title="Ordered List (Ctrl+Shift+O)" data-field-name="body">
+                  <i class="ordered list icon"></i>
+                </div>
+            
+                <div class="ui icon button no-border markdown-selector markdown-link" title="URL/Link (Ctrl+L)" data-field-name="body">
+                  <i class="linkify icon"></i>
+                </div>
+                <div class="ui icon button no-border markdown-selector markdown-image-link" title="Insert Image Link (Ctrl+Shift+I)" data-field-name="body">
+                  <i class="image icon"></i>
+                </div>
+                
+                  <div class="ui icon button no-border markdown-selector markdown-image-upload" title="Upload an Image" data-field-name="body">
+                    <i class="upload icon"></i>
+                    <input name="markdown-image-upload" class="button" type="file" accept="image/*" title="Upload an Image">
+                  </div>
+                
+                <div class="ui icon button no-border markdown-selector markdown-emoji" title="Insert Emoji" data-field-name="body">
+                  <i class="heart icon"></i>
+                </div>
+                <div class="ui icon button no-border markdown-selector markdown-direct-mention" title="Direct Mention a User (Ctrl+M)" data-field-name="body">
+                  <i class="at icon"></i>
+                </div>
+            
+                <div class="ui icon button no-border markdown-selector markdown-toggle-maximize" title="Full Screen" data-field-name="body">
+                  <i class="window maximize outline icon"></i>
+                </div>
+                <div class="ui icon button no-border markdown-selector markdown-help" title="Markdown Guide (Help)" data-field-name="body">
+                  <i class="help circle icon"></i>
+                </div>
+              </div>
+            </div>
+            
+                </div>
+                <div class="ui bottom attached tab segment active" data-tab="editor-tab-body">
+                  <div class="ui active dimmer upload-progress" style="display:none" data-field-name="body">
+                    <div class="ui text loader">Uploading... please wait...</div>
+                  </div>
+                  <div id="martor-body" class="martor-field martor-field-body ace_editor ace_hidpi ace-github resizable"><div style="position: absolute;"></div><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; height: 1px; width: 1px; transform: translate(44px, 25px);"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 41px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; transform: translate(0px, 10px); width: 41px;"><div class="ace_gutter-cell ace_gutter-active-line " style="height: 15px; top: 0px;">1<span style="display: none;"></span></div></div></div><div class="ace_scroller" style="left: 40.1475px; right: 0px; bottom: 0px;"><div class="ace_content" style="transform: translate(0px, 10px); width: 1011.85px; height: 430px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 576px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height: 15px; top: 0px; left: 0px; right: 0px;"></div></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; transform: translate(0px, 0px);"><div class="ace_line_group" style="height: 15px; top: 0px;"><div class="ace_line" style="height: 15px;"></div></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="display: block; transform: translate(4px, 0px); width: 7px; height: 15px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 20px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 35px;"></div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 20px; left: 40.1475px; right: 0px;"><div class="ace_scrollbar-inner" style="height: 20px; width: 1052px;"></div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div><div class="resizable-handle resizable-b"></div></div>
+                  <textarea name="body" cols="40" rows="10" data-markdownfy-url="/widgets/preview/comment" maxlength="8192" placeholder="Bình luận" data-enable-configs="{'imgur': 'true', 'mention': 'true', 'jquery': 'false', 'living': 'false', 'spellcheck': 'false', 'hljs': 'false'}" data-upload-url="/widgets/martor/upload-image" data-search-users-url="/widgets/martor/search-user" data-base-emoji-url="https://github.githubassets.com/images/icons/emoji/" required="" id="id_body" class="martor" style="display:none"></textarea>
+                  <i class="angle double down grey icon expand-editor"></i>
+                </div>
+                <div class="ui bottom attached tab segment martor-preview" data-tab="preview-tab-body"><p></p>
+            
+                <div data-config="/static/mathjax_config.js" class="require-mathjax-support"></div>
+            </div>
+              </div>
+            
+              
+            <div class="ui medium modal scrolling transition modal-help-guide" data-field-name="body">
+              <i class="close icon"></i>
+              <div class="header"><i class="help circle icon"></i> Markdown Guide</div>
+              <div class="content" style="width: auto; margin-bottom: 2.5em;">
+                <p>This site is powered by Markdown. For full documentation, <a href="http://commonmark.org/help/" target="_blank">click here</a>.</p>
+                <table class="ui celled table markdown-reference">
+                  <thead>
+                    <tr>
+                      <th>Code</th>
+                      <th>Or</th>
+                      <th>Linux/Windows</th>
+                      <th>Mac OS</th>
+                      <th>... to Get</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+            
+                    
+                      <tr>
+                        <td>[user:username]</td>
+                        <td>—</td>
+                        <td>Ctrl+M</td>
+                        <td>Command+M</td>
+                        <td><a href="#">username</a></td>
+                      </tr>
+                    
+            
+                    
+                      <tr><td colspan="5"></td></tr>
+                    
+            
+                    <tr>
+                      <td>*Italic*</td>
+                      <td>—</td>
+                      <td>Ctrl+I</td>
+                      <td>Command+I</td>
+                      <td><em>Italic</em></td>
+                    </tr>
+                    <tr>
+                      <td>**Bold**</td>
+                      <td>—</td>
+                      <td>Ctrl+B</td>
+                      <td>Command+B</td>
+                      <td><strong>Bold</strong></td>
+                    </tr>
+                    <tr>
+                      <td><span>~</span><span>~</span>Strikethrough<span>~</span><span>~</span></td>
+                      <td>—</td>
+                      <td>Shift+S</td>
+                      <td>Option+S</td>
+                      <td><del>Strikethrough</del></td>
+                    </tr>
+                    <tr>
+                      <td># Heading 1</td>
+                      <td>Heading 1<br> =========</td>
+                      <td>Ctrl+Alt+1</td>
+                      <td>Command+Option+1</td>
+                      <td><h1>Heading 1</h1></td>
+                    </tr>
+                    <tr>
+                      <td>## Heading 2</td>
+                      <td>Heading 2<br> -----------</td>
+                      <td>Ctrl+Alt+2</td>
+                      <td>Command+Option+2</td>
+                      <td><h2>Heading 2</h2></td>
+                    </tr>
+                    <tr>
+                      <td>[Link](http://a.com)</td>
+                      <td>[Link][1]<br> ⁝<br> [1]: http://b.org</td>
+                      <td>Ctrl+L</td>
+                      <td>Command+L</td>
+                      <td><a href="http://commonmark.org/">Link</a></td>
+                    </tr>
+                    <tr>
+                      <td>![Image](http://url/a.png)</td>
+                      <td>![Image][1]<br> ⁝<br> [1]: http://url/b.jpg</td>
+                      <td>Ctrl+Shift+I</td>
+                      <td>Command+Option+I</td>
+                      <td><img src="/static/plugins/images/commonmark.png" width="36" height="36" alt="Markdown"></td>
+                    </tr>
+                    <tr>
+                      <td>&gt; Blockquote</td>
+                      <td>—</td>
+                      <td>Ctrl+Q</td>
+                      <td>Command+Q</td>
+                      <td><blockquote>Blockquote</blockquote></td>
+                    </tr>
+                    <tr>
+                      <td>A paragraph.<br><br> A paragraph after 1 blank line.</td>
+                      <td>—</td>
+                      <td>—</td>
+                      <td>—</td>
+                      <td><p>A paragraph.</p><p>A paragraph after 1 blank line.</p></td>
+                    </tr>
+                    <tr>
+                      <td><p>* List<br> * List<br> * List</p></td>
+                      <td><p> - List<br> - List<br> - List<br></p></td>
+                      <td>Ctrl+U</td>
+                      <td>Command+U</td>
+                      <td><ul><li>List</li><li>List</li><li>List</li></ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><p> 1. One<br> 2. Two<br> 3. Three</p></td>
+                      <td><p> 1) One<br> 2) Two<br> 3) Three</p></td>
+                      <td>Ctrl+Shift+O</td>
+                      <td>Command+Option+O</td>
+                      <td><ol><li>One</li><li>Two</li><li>Three</li></ol></td>
+                    </tr>
+                    <tr>
+                      <td>Horizontal Rule<br><br> -----------</td>
+                      <td>Horizontal Rule<br><br> ***********</td>
+                      <td>Ctrl+H</td>
+                      <td>Command+H</td>
+                      <td>Horizontal Rule <hr></td>
+                    </tr>
+                    <tr>
+                      <td>`Inline code` with backticks</td>
+                      <td>—</td>
+                      <td>Ctrl+Alt+C</td>
+                      <td>Command+Option+C</td>
+                      <td><code>Inline code</code> with backticks</td>
+                    </tr>
+                    <tr>
+                      <td>```<br> def whatever(foo):<br>&nbsp;&nbsp;&nbsp;&nbsp;return foo<br>```</td>
+                      <td><b>with tab / 4 spaces</b><br>....def whatever(foo):<br>....&nbsp;&nbsp;&nbsp;&nbsp;return foo</td>
+                      <td>Ctrl+Alt+P</td>
+                      <td>Command+Option+P</td>
+                      <td><pre>def whatever(foo):<br>    return foo</pre></td>
+                    </tr>
+                    <tr>
+                      <td><span>~</span>x^2<span>~</span></td>
+                      <td>—</td>
+                      <td>Ctrl+Alt+I</td>
+                      <td>Command+Option+I</td>
+                      <td><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>x</mi><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+              
+            <div class="ui large modal scrolling transition modal-emoji" data-field-name="body">
+              <i class="close icon"></i>
+              <div class="header"><i class="help circle icon"></i> Select Emoji to Insert</div>
+              <div class="content emoji-content-base">
+                <div class="ui segment emoji-loader-init">
+                  <div class="ui active inverted dimmer">
+                    <div class="ui text loader">Preparing emojis...</div>
+                  </div>
+                </div>
+                <div class="ui grid emoji-content-body">
+                </div>
+              </div>
+            </div>
+            
+            </div>
+            </div>
+                                    </div>
+                                    <hr>
+                                    <input style="float:right" type="submit" value="Đăng!" class="button">
+                                </form>
+                        </div>
+                </div>
+                    </div> -->
+
+                   
+                    
+                    <div id="content-left" class="split-common-content">
+                        <div class="content-description screen">
+                            <iframe name="raw_problem" id="raw_problem" src="lift/raw"></iframe>
+                            <p>Trong trường hợp đề bài hiển thị không chính xác, bạn có thể tải đề bài tại đây: <a
+                                    href="https://puoj.phenikaa-uni.edu.vn/pdf/424e2e44-a5fa-42ab-a733-b9e1ee6f2597.pdf">Đề
+                                    bài</a></p>
+                            <object id="pdfContainer"
+                                data="https://puoj.phenikaa-uni.edu.vn/pdf/424e2e44-a5fa-42ab-a733-b9e1ee6f2597.pdf"
+                                type="application/pdf" height="1000" style="width: 100%;"></object>
+
+                            <p></p>
+
+
+                            <hr>
+                        </div>
+                        <div id="comments" class="comment-area">
+                            <h2><i style="padding-right: 0.3em" class="fa fa-comments"></i>Bình luận</h2>
+                            <div class="alert alert-warning">
+                                Hãy đọc <a href="/about/comment/">nội quy</a> trước khi bình luận.
+                            </div>
+                            <hr><br>
+
+                            <p class="no-comments-message">Không có bình luận tại thời điểm này.</p>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        <div class="ace_wrapper">
+            <div class="header">
+                <div class="flex file_name-wrapper">
+                    <input class="file-name" value="main.c" spellcheck="false" type="text" >
+                    <i onclick="saveFile()" class="fa fa-download" aria-hidden="true"></i>
+                </div>
+
+                <label for="language">Language:</label>
+                <select id="language">
+                    <option value="c" selected>C</option>
+                    <option value="cpp">C++</option>
+                    <option value="java">Java</option>
+                    <option value="kotlin">Kotlin</option>
+                    <option value="pascal">Pascal</option>
+                    <option value="pypy">PyPy</option>
+                    <option value="python">Python</option>
+                    <option value="scratch">Scratch</option>
+                </select>
+
+                <label for="theme">Theme:</label>
+                <select id="theme">
+                    <option value="textmate">TextMate</option>
+                    <option value="monokai">Monokai</option>
+                    <option value="github">GitHub</option>
+                    <option value="tomorrow">Tomorrow</option>
+                    <option value="kuroir">Kuroir</option>
+                    <option value="twilight">Twilight</option>
+                    <option value="xcode">XCode</option>
+                    <option value="solarized_dark">Solarized Dark</option>
+                    <option value="solarized_light">Solarized Light</option>
+                    <option value="terminal">Terminal</option>
+                </select>
+                
+                <i onclick="hideIde()" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+
+            <div id="editor"></div>
+
+            <div class="tabs">
+                <div class="tab-button input-btn active" onclick="showTab('input-tab')">Input</div>
+                <div class="tab-button output-btn" onclick="showTab('output-tab')">Output</div>
+            </div>
+
+            <div id="input-tab" class="tab-content active">
+                <textarea spellcheck="false" id="input" placeholder="Nhập input tại đây..."
+                    style="width:100%; height: 150px;"></textarea>
+            </div>
+
+            <div id="output-tab" class="tab-content">
+                <textarea id="terminal" style="width:100%; height: 150px;" readonly></textarea>
+            </div>
+            <button class="submit-btn" onclick="runCode()">Gửi</button>
+        </div>
+
+
+        <script type="text/javascript" src="../static/mathjax_config.js"></script>
+        <script type="text/javascript" src="../static/vnoj/mathjax/tex-chtml.min.js"></script>
+        <script type="text/javascript">
+            MathJax.typesetPromise().then(function () {
+                $('.tex-image').hide();
+                $('.tex-text').show();
+            });
+        </script>
+        <footer>
+            <span id="footer-content">
+                <br>
+                proudly powered by <a style="color: #808080" href="https://dmoj.ca/"><b>DMOJ</b></a> |
+                follow us on <a style="color: #808080" href="https://github.com/VNOI-Admin/OJ"><b>Github</b></a> and <a
+                    style="color: #808080" href="https://www.facebook.com/vnoi.wiki"><b>Facebook</b></a>
+                <form id="set_language" action="https://puoj.phenikaa-uni.edu.vn/i18n/setlang/" method="post"
+                    style="display: inline">
+                    <input type='hidden' name='csrfmiddlewaretoken'
+                        value='DLfWkKgWnbqCOEDuiOntPUNXXLZIRk9MJN2wHDybmYgkWLc8FZYUzSrR79vXF6iO' /> <input name="next"
+                        type="hidden" value="/problem/beginner_043">
+                    <input name="language" type="hidden" value="en">
+                </form>
+            </span>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.39.1/ace.js"></script>
+    <script src="./ide.js"></script>
+</body>
+
+</html>

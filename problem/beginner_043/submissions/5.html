@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from puoj.phenikaa-uni.edu.vn/problem/beginner_043/submissions/5 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Apr 2025 16:48:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>All submissions for Tìm mã chuẩn - PUOJ: Phenikaa University Online Judge</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon" sizes="57x57" href="../../../apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../../apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../../apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../../apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../../apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../../apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../../apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../../apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="../../../favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../../android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="../../../favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="../../../favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://puoj.phenikaa-uni.edu.vn/manifest.json">
+    <meta name="msapplication-TileColor" content="#231F20">
+    <meta name="msapplication-TileImage" content="../../../mstile-144x144.png">
+    <meta name="theme-color" content="#231F20">
+        <meta property="og:image" content="../../../logo.png">
+    <meta property="og:site_name" content="PUOJ: Phenikaa University Online Judge">
+    <meta property="og:url"
+          content="https://oj.vnoi.info/problem/beginner_043/submissions/5">
+
+<link rel="stylesheet" href="../../../static/cache/css/output.349389e5712a.css" type="text/css">    <link rel="canonical"
+          href="https://oj.vnoi.info/problem/beginner_043/submissions/5">
+
+    <style>
+        .total {
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        #status-graph {
+            padding: 1em 0em;
+        }
+
+        #status-graph canvas {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+
+<script src="../../../static/cache/js/output.cdb3460466a3.js"></script>    <script type="text/javascript">
+        window.results_json = {"categories": [{"code": "AC", "name": "Accepted", "count": 90}, {"code": "WA", "name": "Wrong", "count": 112}, {"code": "CE", "name": "Compile Error", "count": 80}, {"code": "TLE", "name": "Timeout", "count": 6}, {"code": "ERR", "name": "Error", "count": 3}], "total": 291};
+    </script>
+
+<script src="../../../static/cache/js/output.8f1f6f37de21.js"></script>
+        <script>
+            window.event_dispatcher = new WSEventDispatcher(
+                'wss://puoj.phenikaa-uni.edu.vn/event/',
+                'https://puoj.phenikaa-uni.edu.vn/channels/',
+                1742780727448
+            );
+        </script>
+
+        <script>window.user = {};</script>
+
+
+    <script>
+        function submmit_language(lang) {
+            if (lang != "en" ) {
+                $("input[name=language]").val(lang)
+                $("#set_language").submit()
+            }
+        }
+    </script>
+    <noscript>
+        <style>
+            #content {
+                margin: 80px auto auto;
+            }
+
+            #navigation {
+                top: 27px;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+<svg width="0" height="0" style="display: block">
+    <defs>
+        <clipPath id="rating-clip"><circle cx="8" cy="8" r="7"/></clipPath>
+    </defs>
+</svg>
+<nav id="navigation" class="unselectable">
+    <div id="nav-container">
+        <a id="navicon" href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+        <ul id="nav-list">
+                <li class="home-nav-element"><a href="https://puoj.phenikaa-uni.edu.vn/">    <img src="https://puoj.phenikaa-uni.edu.vn/static/icons/logo.svg" alt="PUOJ" width="130" height="40"
+         onerror="this.src=&quot;/static/icons/logo.png&quot;; this.onerror=null" style="border: none; padding-top: 4px">
+</a></li>
+                <li class="home-nav-element"><span class="nav-divider"></span></li>
+                <li class="home-menu-item"><a href="https://puoj.phenikaa-uni.edu.vn/" class="nav-home">Home</a></li>
+                    <li>
+                        <a href="https://puoj.phenikaa-uni.edu.vn/problems/" class="nav-problems active">
+                            Problems
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://puoj.phenikaa-uni.edu.vn/submissions/" class="nav-submit">
+                            Submissions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://puoj.phenikaa-uni.edu.vn/users/" class="nav-user">
+                            Users
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://puoj.phenikaa-uni.edu.vn/organizations/" class="nav-organizati">
+                            Organizations
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://puoj.phenikaa-uni.edu.vn/contests/" class="nav-contest">
+                            Contests
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://puoj.phenikaa-uni.edu.vn/about/" class="nav-about">
+                            About
+                                <div class="nav-expand">&gt;</div>
+                        </a>
+<ul>                    <li>
+                        <a href="https://puoj.phenikaa-uni.edu.vn/status/" class="nav-status">
+                            Judges
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://puoj.phenikaa-uni.edu.vn/custom_checkers/" class="nav-checkers">
+                            Custom Checkers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/VNOI-Admin/OJ" class="nav-github">
+                            Github
+                        </a>
+                    </li>
+</ul>                    </li>
+        </ul>
+
+        <span id="user-links">
+            <a href=
+                    "https://puoj.phenikaa-uni.edu.vn/tickets/new?issue_url=https%3A//puoj.phenikaa-uni.edu.vn/problem/beginner_043/submissions/5"
+            style="margin-right: 5px;">
+                <span title="Report issue">
+                    <i class="fa fa-exclamation-triangle" style="color: yellow;"></i>
+                </span>
+            </a>
+            <a id="flag_vi" href="#" onclick="submmit_language('vi')" style="margin-right: 5px; margin-top: 4px;">
+                <img src="https://puoj.phenikaa-uni.edu.vn/static/icons/vi_flag.svg" alt="VI" height="24">
+            </a>
+            <a id="flag_en" href="#" onclick="submmit_language('en')" style="margin-right: 5px; margin-top: 4px;">
+                <img src="https://puoj.phenikaa-uni.edu.vn/static/icons/gb_flag.svg" alt="EN" height="24">
+            </a>
+                <span class="anon">
+                    <a href="https://puoj.phenikaa-uni.edu.vn/accounts/login/?next=/problem/beginner_043/submissions/5"><b>Log in</b></a>
+                    &nbsp;or&nbsp;
+                    <a href="https://puoj.phenikaa-uni.edu.vn/accounts/register/"><b>Sign up</b></a>
+                </span>
+        </span>
+    </div>
+    <div id="nav-shadow"></div>
+</nav>
+<div id="page-container">
+    <noscript>
+        <div id="noscript">This site works best with JavaScript enabled.</div>
+    </noscript>
+    <br>
+    <main id="content">
+
+<div class="tabs">
+        <h2>All submissions for <a href="../../beginner_043.html">Tìm mã chuẩn</a></h2>
+    <ul>
+        <li class="tab active"><a href="index.html"><i class="tab-icon fa fa-list"></i> All</a></li>
+
+            <li class="tab"><a href="../rank/index.html"><i class="tab-icon fa fa-bar-chart"></i> Best</a></li>
+
+    </ul>
+</div>        <div id="content-body">        <div class="top-pagination-bar"><ul class="pagination">
+            <li><a href="4.html">«</a></li>
+
+            <li><a href=".html">1</a></li>
+            <li><a href="2.html">2</a></li>
+            <li><a href="3.html">3</a></li>
+            <li><a href="4.html">4</a></li>
+            <li class="active-page"><a href="5.html">5</a></li>
+            <li><a href="6.html">6</a></li>
+
+        <li><a href="6.html">»</a></li>
+</ul></div>
+
+    <div id="common-content">
+        <div id="content-right" class="submission">
+            <div class="info-float">
+                <div class="sidebox">
+                    <h3>Filter submissions <i class="fa fa-search"></i></h3>
+                    <div class="sidebox-content">
+                        <form id="filter-form" name="form" action="https://puoj.phenikaa-uni.edu.vn/problem/beginner_043/submissions/." method="get">
+                            <div class="filter-form-group">
+                                <label for="status"><i>Status</i></label>
+                                <select id="status" name="status" multiple>
+                                        <option                                                 value="AC">Accepted</option>
+                                        <option                                                 value="WA">Wrong Answer</option>
+                                        <option                                                 value="TLE">Time Limit Exceeded</option>
+                                        <option                                                 value="MLE">Memory Limit Exceeded</option>
+                                        <option                                                 value="OLE">Output Limit Exceeded</option>
+                                        <option                                                 value="IR">Invalid Return</option>
+                                        <option                                                 value="RTE">Runtime Error</option>
+                                        <option                                                 value="CE">Compile Error</option>
+                                        <option                                                 value="AB">Aborted</option>
+                                </select>
+                            </div>
+                            <div class="filter-form-group">
+                                <label for="language"><i>Language</i></label>
+                                <select id="language" name="language" multiple>
+                                        <option                                                 value="C">C</option>
+                                        <option                                                 value="C11">C11</option>
+                                        <option                                                 value="CPP03">C++03</option>
+                                        <option                                                 value="CPP11">C++11</option>
+                                        <option                                                 value="CPP14">C++14</option>
+                                        <option                                                 value="CPP17">C++17</option>
+                                        <option                                                 value="CPP20">C++20</option>
+                                        <option                                                 value="JAVA">Java 19</option>
+                                        <option                                                 value="JAVA8">Java 8</option>
+                                        <option                                                 value="KOTLIN">Kotlin</option>
+                                        <option                                                 value="OUTPUT">Output Only</option>
+                                        <option                                                 value="PAS">Pascal</option>
+                                        <option                                                 value="PY2">Python 2</option>
+                                        <option                                                 value="PY3">Python 3</option>
+                                        <option                                                 value="PYPY">PyPy 2</option>
+                                        <option                                                 value="PYPY3">PyPy 3</option>
+                                        <option                                                 value="SCRATCH">Scratch</option>
+                                        <option                                                 value="TEXT">TEXT</option>
+                                </select>
+                            </div>
+                                <div class="filter-form-group">
+                                    <label for="organization"><i>Organization</i></label>
+                                    <select id="organization" name="organization">
+                                        <option value="">All</option>
+                                        <option disabled="disabled">---</option>
+                                            <option                                                     value="7">Cấu trúc dữ liệu và thuật toán-1-1-24(N01.TH1)</option>
+                                            <option                                                     value="8">Cấu trúc dữ liệu và thuật toán-1-1-24(N01.TH2)</option>
+                                            <option                                                     value="9">Cấu trúc dữ liệu và thuật toán-1-1-24(N04.TH1)</option>
+                                            <option                                                     value="4">Cấu trúc dữ liệu và thuật toán-1-1-24(N06.TH1)</option>
+                                            <option                                                     value="10">Cấu trúc dữ liệu và thuật toán-1-1-24(N06.TH2)</option>
+                                            <option                                                     value="5">Cấu trúc dữ liệu và thuật toán-1-1-24(N07.TH1)</option>
+                                            <option                                                     value="11">Cấu trúc dữ liệu và thuật toán-1-1-24(N07.TH2)</option>
+                                            <option                                                     value="6">Cấu trúc dữ liệu và thuật toán-1-1-24(N08.TH1)</option>
+                                            <option                                                     value="12">Cấu trúc dữ liệu và thuật toán-1-1-24(N08.TH2)</option>
+                                            <option                                                     value="23">Cấu trúc dữ liệu và thuật toán-1-2-24(N01.TH1)</option>
+                                            <option                                                     value="26">Cấu trúc dữ liệu và thuật toán-1-2-24(N01.TH2)</option>
+                                            <option                                                     value="28">Cấu trúc dữ liệu và thuật toán-1-2-24(N02.TH1)</option>
+                                            <option                                                     value="24">Cấu trúc dữ liệu và thuật toán-1-2-24(N02.TH2)</option>
+                                            <option                                                     value="25">Cấu trúc dữ liệu và thuật toán-1-2-24(N03.TH1)</option>
+                                            <option                                                     value="27">Cấu trúc dữ liệu và thuật toán-1-2-24(N03.TH2)[TanTD]</option>
+                                            <option                                                     value="37">Cơ sở lập trình-2-2-24(N01)</option>
+                                            <option                                                     value="46">Cơ sở lập trình-2-2-24(N02)</option>
+                                            <option                                                     value="30">Lập trình C nâng cao*-1-2-24(N02)[tantd]</option>
+                                            <option                                                     value="22">Lập trình C nâng cao*-2-1-24(N01)</option>
+                                            <option                                                     value="21">Lập trình C nâng cao*-2-1-24(N02)</option>
+                                            <option                                                     value="29">Lập trình C nâng cao*-4-2-24(N01)[tantd]</option>
+                                            <option                                                     value="33">Ngôn ngữ lập trình C-2-2-24(N01)</option>
+                                            <option                                                     value="42">Ngôn ngữ lập trình C-2-2-24(N02)</option>
+                                            <option                                                     value="34">Ngôn ngữ lập trình C-2-2-24(N03)</option>
+                                            <option                                                     value="40">Ngôn ngữ lập trình C-2-2-24(N04)</option>
+                                            <option                                                     value="47">Ngôn ngữ lập trình C-2-2-24(N05)</option>
+                                            <option                                                     value="35">Ngôn ngữ lập trình C-2-2-24(N06)</option>
+                                            <option                                                     value="44">Ngôn ngữ lập trình C-2-2-24(N07)</option>
+                                            <option                                                     value="43">Ngôn ngữ lập trình C-2-2-24(N08)</option>
+                                            <option                                                     value="36">Ngôn ngữ lập trình C-2-2-24(N09)</option>
+                                            <option                                                     value="41">Ngôn ngữ lập trình C-2-2-24(N10)</option>
+                                            <option                                                     value="48">Ngôn ngữ lập trình C-2-2-24(N11)</option>
+                                            <option                                                     value="38">Ngôn ngữ lập trình C-2-2-24(N12)</option>
+                                            <option                                                     value="39">Ngôn ngữ lập trình C-2-2-24(N13)</option>
+                                            <option                                                     value="45">Ngôn ngữ lập trình C-2-2-24(N14)</option>
+                                            <option                                                     value="13">PKA OLP</option>
+                                            <option                                                     value="1">PUOJ: Phenikaa University Online Judge</option>
+                                    </select>
+                                </div>
+                            <div class="form-submit-group">
+                                <a id="go" onclick="form.submit()" class="button">Go</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="statistics-table">
+                        <h3>Statistics <i class="fa fa-pie-chart"></i></h3>
+                        <div class="sidebox-content">
+                            <div id="status-graph">
+                                <canvas width="230" height="170"></canvas>
+                            </div>
+                            <div class="total">
+                                Total: <span id="total-submission-count"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content-left" class="submission">
+            <div class="ws-closed">
+                <a href="javascript:void(0)">You were disconnected. Refresh to show latest updates.</a>
+            </div>
+
+            <div id="submissions-table">
+                    <div class="submission-row" id="76798">
+<div class="sub-result CE">
+    <div class="score">---</div>
+
+    <div class="state">
+        <span title="Compile Error" class="status">CE</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100505" style="display: inline-block;">24100505</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T08:12:43.961592+00:00" class="time-with-rel" title="April 1, 2025, 8:12 a.m." data-format="{time}">on April 1, 2025, 8:12 a.m.</span></span>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+        <div class="time">---</div>
+        <div class="memory">---</div>
+</div>                    </div>
+                    <div class="submission-row" id="76752">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100482" style="display: inline-block;">24100482</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:50:05.666788+00:00" class="time-with-rel" title="April 1, 2025, 7:50 a.m." data-format="{time}">on April 1, 2025, 7:50 a.m.</span></span>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002934867s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76741">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24108095" style="display: inline-block;">24108095</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:45:54.665967+00:00" class="time-with-rel" title="April 1, 2025, 7:45 a.m." data-format="{time}">on April 1, 2025, 7:45 a.m.</span></span>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002913579s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76735">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24107818" style="display: inline-block;">24107818</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:45:03.090770+00:00" class="time-with-rel" title="April 1, 2025, 7:45 a.m." data-format="{time}">on April 1, 2025, 7:45 a.m.</span></span>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.003323578s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76731">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24107818" style="display: inline-block;">24107818</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:44:32.945007+00:00" class="time-with-rel" title="April 1, 2025, 7:44 a.m." data-format="{time}">on April 1, 2025, 7:44 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002875899s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76730">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24107818" style="display: inline-block;">24107818</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:44:16.785287+00:00" class="time-with-rel" title="April 1, 2025, 7:44 a.m." data-format="{time}">on April 1, 2025, 7:44 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002917335s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76727">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24108095" style="display: inline-block;">24108095</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:44:11.177661+00:00" class="time-with-rel" title="April 1, 2025, 7:44 a.m." data-format="{time}">on April 1, 2025, 7:44 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002919855s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76725">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24107818" style="display: inline-block;">24107818</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:43:35.936156+00:00" class="time-with-rel" title="April 1, 2025, 7:43 a.m." data-format="{time}">on April 1, 2025, 7:43 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002928275s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76723">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24108095" style="display: inline-block;">24108095</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:43:14.505956+00:00" class="time-with-rel" title="April 1, 2025, 7:43 a.m." data-format="{time}">on April 1, 2025, 7:43 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002864805s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76719">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24102866" style="display: inline-block;">24102866</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:42:19.316615+00:00" class="time-with-rel" title="April 1, 2025, 7:42 a.m." data-format="{time}">on April 1, 2025, 7:42 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002895426s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76717">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100087" style="display: inline-block;">24100087</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:41:59.404029+00:00" class="time-with-rel" title="April 1, 2025, 7:41 a.m." data-format="{time}">on April 1, 2025, 7:41 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002913906s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76711">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24102866" style="display: inline-block;">24102866</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:41:22.629475+00:00" class="time-with-rel" title="April 1, 2025, 7:41 a.m." data-format="{time}">on April 1, 2025, 7:41 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002984796s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76710">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100087" style="display: inline-block;">24100087</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:41:16.382496+00:00" class="time-with-rel" title="April 1, 2025, 7:41 a.m." data-format="{time}">on April 1, 2025, 7:41 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002817835s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76695">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24108095" style="display: inline-block;">24108095</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:38:27.137724+00:00" class="time-with-rel" title="April 1, 2025, 7:38 a.m." data-format="{time}">on April 1, 2025, 7:38 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002912225s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76692">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100904" style="display: inline-block;">24100904</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:38:02.887517+00:00" class="time-with-rel" title="April 1, 2025, 7:38 a.m." data-format="{time}">on April 1, 2025, 7:38 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002978664s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76691">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24108095" style="display: inline-block;">24108095</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:37:56.348571+00:00" class="time-with-rel" title="April 1, 2025, 7:37 a.m." data-format="{time}">on April 1, 2025, 7:37 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002922426s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76687">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24107818" style="display: inline-block;">24107818</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:36:58.666106+00:00" class="time-with-rel" title="April 1, 2025, 7:36 a.m." data-format="{time}">on April 1, 2025, 7:36 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002909034s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76686">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24106668" style="display: inline-block;">24106668</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:36:42.391976+00:00" class="time-with-rel" title="April 1, 2025, 7:36 a.m." data-format="{time}">on April 1, 2025, 7:36 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002906726s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76684">
+<div class="sub-result CE">
+    <div class="score">---</div>
+
+    <div class="state">
+        <span title="Compile Error" class="status">CE</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24107818" style="display: inline-block;">24107818</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:36:18.042129+00:00" class="time-with-rel" title="April 1, 2025, 7:36 a.m." data-format="{time}">on April 1, 2025, 7:36 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+        <div class="time">---</div>
+        <div class="memory">---</div>
+</div>                    </div>
+                    <div class="submission-row" id="76682">
+<div class="sub-result CE">
+    <div class="score">---</div>
+
+    <div class="state">
+        <span title="Compile Error" class="status">CE</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24107818" style="display: inline-block;">24107818</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:35:48.707843+00:00" class="time-with-rel" title="April 1, 2025, 7:35 a.m." data-format="{time}">on April 1, 2025, 7:35 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+        <div class="time">---</div>
+        <div class="memory">---</div>
+</div>                    </div>
+                    <div class="submission-row" id="76680">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100087" style="display: inline-block;">24100087</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:35:07.949644+00:00" class="time-with-rel" title="April 1, 2025, 7:35 a.m." data-format="{time}">on April 1, 2025, 7:35 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002829775s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76679">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24107818" style="display: inline-block;">24107818</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:35:05.355172+00:00" class="time-with-rel" title="April 1, 2025, 7:35 a.m." data-format="{time}">on April 1, 2025, 7:35 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002928486s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76678">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24107818" style="display: inline-block;">24107818</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:34:52.713992+00:00" class="time-with-rel" title="April 1, 2025, 7:34 a.m." data-format="{time}">on April 1, 2025, 7:34 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002928926s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76664">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24102466" style="display: inline-block;">24102466</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:31:35.464414+00:00" class="time-with-rel" title="April 1, 2025, 7:31 a.m." data-format="{time}">on April 1, 2025, 7:31 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.003498626s" class="time">
+                0.00s
+            </div>
+        <div class="memory">3.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76645">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24103783" style="display: inline-block;">24103783</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:26:54.913324+00:00" class="time-with-rel" title="April 1, 2025, 7:26 a.m." data-format="{time}">on April 1, 2025, 7:26 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002839995s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76638">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24103783" style="display: inline-block;">24103783</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:25:24.782338+00:00" class="time-with-rel" title="April 1, 2025, 7:25 a.m." data-format="{time}">on April 1, 2025, 7:25 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002987264s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76637">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24107818" style="display: inline-block;">24107818</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:25:19.986059+00:00" class="time-with-rel" title="April 1, 2025, 7:25 a.m." data-format="{time}">on April 1, 2025, 7:25 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002911805s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76631">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24107818" style="display: inline-block;">24107818</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:24:39.673787+00:00" class="time-with-rel" title="April 1, 2025, 7:24 a.m." data-format="{time}">on April 1, 2025, 7:24 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002930005s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76629">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24105787" style="display: inline-block;">24105787</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:24:00.324379+00:00" class="time-with-rel" title="April 1, 2025, 7:24 a.m." data-format="{time}">on April 1, 2025, 7:24 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002934106s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.6 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76617">
+<div class="sub-result TLE">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Time Limit Exceeded" class="status">TLE</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100904" style="display: inline-block;">24100904</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:21:28.698758+00:00" class="time-with-rel" title="April 1, 2025, 7:21 a.m." data-format="{time}">on April 1, 2025, 7:21 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div class="time">---</div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76606">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100482" style="display: inline-block;">24100482</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:19:01.074416+00:00" class="time-with-rel" title="April 1, 2025, 7:19 a.m." data-format="{time}">on April 1, 2025, 7:19 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002916605s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76595">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24103783" style="display: inline-block;">24103783</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:16:09.302574+00:00" class="time-with-rel" title="April 1, 2025, 7:16 a.m." data-format="{time}">on April 1, 2025, 7:16 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002891685s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76587">
+<div class="sub-result CE">
+    <div class="score">---</div>
+
+    <div class="state">
+        <span title="Compile Error" class="status">CE</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24103783" style="display: inline-block;">24103783</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:15:18.164323+00:00" class="time-with-rel" title="April 1, 2025, 7:15 a.m." data-format="{time}">on April 1, 2025, 7:15 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+        <div class="time">---</div>
+        <div class="memory">---</div>
+</div>                    </div>
+                    <div class="submission-row" id="76585">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100482" style="display: inline-block;">24100482</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:15:11.004965+00:00" class="time-with-rel" title="April 1, 2025, 7:15 a.m." data-format="{time}">on April 1, 2025, 7:15 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002856545s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76584">
+<div class="sub-result TLE">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Time Limit Exceeded" class="status">TLE</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100904" style="display: inline-block;">24100904</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:15:05.353190+00:00" class="time-with-rel" title="April 1, 2025, 7:15 a.m." data-format="{time}">on April 1, 2025, 7:15 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div class="time">---</div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76578">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24103783" style="display: inline-block;">24103783</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:13:27.983774+00:00" class="time-with-rel" title="April 1, 2025, 7:13 a.m." data-format="{time}">on April 1, 2025, 7:13 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002964175s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76564">
+<div class="sub-result CE">
+    <div class="score">---</div>
+
+    <div class="state">
+        <span title="Compile Error" class="status">CE</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24103783" style="display: inline-block;">24103783</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:11:21.942048+00:00" class="time-with-rel" title="April 1, 2025, 7:11 a.m." data-format="{time}">on April 1, 2025, 7:11 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+        <div class="time">---</div>
+        <div class="memory">---</div>
+</div>                    </div>
+                    <div class="submission-row" id="76533">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24103783" style="display: inline-block;">24103783</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:04:12.731921+00:00" class="time-with-rel" title="April 1, 2025, 7:04 a.m." data-format="{time}">on April 1, 2025, 7:04 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002783576s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76530">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24103783" style="display: inline-block;">24103783</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:04:03.175815+00:00" class="time-with-rel" title="April 1, 2025, 7:04 a.m." data-format="{time}">on April 1, 2025, 7:04 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002918975s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76526">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24103783" style="display: inline-block;">24103783</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T07:03:26.406312+00:00" class="time-with-rel" title="April 1, 2025, 7:03 a.m." data-format="{time}">on April 1, 2025, 7:03 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002888936s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76427">
+<div class="sub-result WA">
+    <div class="score">6 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24102866" style="display: inline-block;">24102866</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T06:43:47.232390+00:00" class="time-with-rel" title="April 1, 2025, 6:43 a.m." data-format="{time}">on April 1, 2025, 6:43 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.003170247s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76418">
+<div class="sub-result WA">
+    <div class="score">6 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24102866" style="display: inline-block;">24102866</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T06:41:54.871436+00:00" class="time-with-rel" title="April 1, 2025, 6:41 a.m." data-format="{time}">on April 1, 2025, 6:41 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.00289812s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76416">
+<div class="sub-result WA">
+    <div class="score">0 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100904" style="display: inline-block;">24100904</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T06:41:30.300038+00:00" class="time-with-rel" title="April 1, 2025, 6:41 a.m." data-format="{time}">on April 1, 2025, 6:41 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.00289192s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76399">
+<div class="sub-result WA">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24102866" style="display: inline-block;">24102866</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T06:36:24.376705+00:00" class="time-with-rel" title="April 1, 2025, 6:36 a.m." data-format="{time}">on April 1, 2025, 6:36 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002846753s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76360">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100153" style="display: inline-block;">24100153</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T06:28:19.043853+00:00" class="time-with-rel" title="April 1, 2025, 6:28 a.m." data-format="{time}">on April 1, 2025, 6:28 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.003009804s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76356">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none setter"><a href="https://puoj.phenikaa-uni.edu.vn/user/24100046" style="display: inline-block;">24100046</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T06:27:39.712146+00:00" class="time-with-rel" title="April 1, 2025, 6:27 a.m." data-format="{time}">on April 1, 2025, 6:27 a.m.</span></span>
+                <a href="https://puoj.phenikaa-uni.edu.vn/contest/nnltc222411_5"
+                   class="submission-contest">
+                    <i title="TH5" class="fa fa-dot-circle-o"></i>
+                </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.003431054s" class="time">
+                0.00s
+            </div>
+        <div class="memory">3.4 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76304">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C++17</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24108095" style="display: inline-block;">24108095</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T05:36:16.511619+00:00" class="time-with-rel" title="April 1, 2025, 5:36 a.m." data-format="{time}">on April 1, 2025, 5:36 a.m.</span></span>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002885038s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76282">
+<div class="sub-result IR">
+    <div class="score">1 / 10</div>
+
+    <div class="state">
+        <span title="Invalid Return" class="status">IR</span> |
+        <span class="language">C++20</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none teacher"><a href="https://puoj.phenikaa-uni.edu.vn/user/ngoandt" style="display: inline-block;">ngoandt</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T04:36:14.420049+00:00" class="time-with-rel" title="April 1, 2025, 4:36 a.m." data-format="{time}">on April 1, 2025, 4:36 a.m.</span></span>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002896966s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76280">
+<div class="sub-result WA">
+    <div class="score">2 / 10</div>
+
+    <div class="state">
+        <span title="Wrong Answer" class="status">WA</span> |
+        <span class="language">C</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none user"><a href="https://puoj.phenikaa-uni.edu.vn/user/24108512" style="display: inline-block;">24108512</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T04:34:03.278269+00:00" class="time-with-rel" title="April 1, 2025, 4:34 a.m." data-format="{time}">on April 1, 2025, 4:34 a.m.</span></span>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.002828215s" class="time">
+                0.00s
+            </div>
+        <div class="memory">1.5 MB</div>
+</div>                    </div>
+                    <div class="submission-row" id="76279">
+<div class="sub-result AC">
+    <div class="score">10 / 10</div>
+
+    <div class="state">
+        <span title="Accepted" class="status">AC</span> |
+        <span class="language">C++20</span>
+    </div>
+</div>
+<div class="sub-main">
+    <div class="sub-info">
+        <div>
+            <span class="rating rate-none teacher"><a href="https://puoj.phenikaa-uni.edu.vn/user/dungpt" style="display: inline-block;">dungpt</a></span>
+            <br class="xs-br">
+            <span class="time"><span data-iso="2025-04-01T04:32:56.240861+00:00" class="time-with-rel" title="April 1, 2025, 4:32 a.m." data-format="{time}">on April 1, 2025, 4:32 a.m.</span></span>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="sub-usage">
+            <div title="0.003440077s" class="time">
+                0.00s
+            </div>
+        <div class="memory">3.4 MB</div>
+</div>                    </div>
+            </div>
+        </div>
+    </div>
+        <div class="bottom-pagination-bar"><ul class="pagination">
+            <li><a href="4.html">«</a></li>
+
+            <li><a href=".html">1</a></li>
+            <li><a href="2.html">2</a></li>
+            <li><a href="3.html">3</a></li>
+            <li><a href="4.html">4</a></li>
+            <li class="active-page"><a href="5.html">5</a></li>
+            <li><a href="6.html">6</a></li>
+
+        <li><a href="6.html">»</a></li>
+</ul></div>
+</div>
+    </main>
+
+
+
+    <footer>
+        <span id="footer-content">
+            <br>
+            proudly powered by <a style="color: #808080" href="https://dmoj.ca/"><b>DMOJ</b></a> |
+            follow us on <a style="color: #808080" href="https://github.com/VNOI-Admin/OJ"><b>Github</b></a> and <a style="color: #808080" href="https://www.facebook.com/vnoi.wiki"><b>Facebook</b></a>
+            <form id="set_language" action="https://puoj.phenikaa-uni.edu.vn/i18n/setlang/" method="post" style="display: inline">
+<input type='hidden' name='csrfmiddlewaretoken' value='Z56934wEPGRxd2LG7ehn3DeSHoBIKCVC57TJqXOTOtHfl9kkupSONBSMRM7Xyo4E' />            <input name="next" type="hidden" value="/problem/beginner_043/submissions/5">
+            <input name="language" type="hidden" value="en">
+          </form>
+        </span>
+    </footer>
+</div>
+</body>
+
+<!-- Mirrored from puoj.phenikaa-uni.edu.vn/problem/beginner_043/submissions/5 by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 05 Apr 2025 16:48:51 GMT -->
+</html>
