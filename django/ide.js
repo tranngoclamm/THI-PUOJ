@@ -1,4 +1,4 @@
-const editor = ace.edit("editor");
+const editor = ace.edit("editor2");
 const savedLanguage = localStorage.getItem("language") || "c";
 const savedTheme = localStorage.getItem("theme") || "textmate";
 editor.setShowPrintMargin(false);
@@ -49,6 +49,7 @@ document.getElementById("language").addEventListener("change", function () {
 
 document.getElementById("language").value = savedLanguage;
 document.getElementById("theme").value = savedTheme;
+document.querySelector(".ace_wrapper .file-name").value = languageFileNames[savedLanguage];
 if (savedLanguage == 'c' || savedLanguage == 'cpp') {
     editor.session.setMode("ace/mode/c_cpp");
 } else {
@@ -62,6 +63,8 @@ if (this.value == 'c' || this.value == 'cpp') {
 } else {
     editor.setTheme("ace/theme/" + savedTheme)
 };
+
+
 function showTab(tabId) {
     document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
     document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
@@ -70,18 +73,8 @@ function showTab(tabId) {
     document.querySelectorAll('.tab-button')[index].classList.add('active');
 }
 
-let websocket = new WebSocket("ws://localhost:8000/run_terminal/");
 let terminal = document.getElementById("terminal");
 let input = document.getElementById("input");
-
-websocket.onmessage = function (event) {
-    const data = event.data;
-    if (data.includes("Error")) {
-        terminal.value = data + '\n';
-    } else {
-        terminal.value = data;
-    }
-};
 
 function saveFile() {
     let code = editor.getValue();
@@ -138,13 +131,36 @@ function hideIde(){
 }
 
 function runCode() {
-    let code = editor.getValue();
-    let inputText = input.value;
-    websocket.send(JSON.stringify({
-        code: code,
-        input_data: inputText
-    }));
+    let code = editor.getValue(); 
+    let inputText = input.value;  
+
     terminal.value = "Running code...\n";
     showTab('output-tab');
-}
 
+    fetch("http://127.0.0.1:8000/run_code/", {
+        method: "POST",  
+        headers: {
+            "Content-Type": "application/json"  
+        },
+        body: JSON.stringify({
+            code: code,
+            input_data: inputText
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            return response.json().then(errorData => {
+                throw new Error(errorData.detail); 
+            });
+        }
+        return response.json();  
+    })
+    .then(data => {
+        terminal.value = data.output;
+        terminal.value += "\nElapsed Time: " + data.elapsed_time + " seconds";
+        terminal.value += "\nMemory Usage: " + data.memory_usage + " KB";
+    })
+    .catch(error => {
+        terminal.value = "Error: " + error.message;  
+    });
+}
