@@ -1,252 +1,150 @@
-.ace_wrapper #editor {
-    height: 300px;
-    width: 100%;
-    border: 1px solid #ccc;
-}
+const editor = ace.edit("editor");
+const savedLanguage = localStorage.getItem("language") || "c";
+const savedTheme = localStorage.getItem("theme") || "textmate";
+editor.setShowPrintMargin(false);
 
-.ace_wrapper #terminal {
-    width: 100%;
-    height: 200px;
-    white-space: pre-wrap;
-    overflow-y: auto;
-    font-family: monospace;
-}
+let languageCodeSamples = {
+    "c": "#include <stdio.h>\nint main() {\n    printf(\"Hello, World!\\n\");\n    return 0;\n}",
+    "cpp": "#include <iostream>\nusing namespace std;\nint main() {\n    cout << \"Hello, World!\" << endl;\n    return 0;\n}",
+    "java": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}",
+    "kotlin": "fun main() {\n    println(\"Hello, World!\")\n}",
+    "pascal": "program HelloWorld;\nbegin\n    writeln('Hello, World!');\nend.",
+    "pypy": "print('Hello, World!')",
+    "python": "print('Hello, World!')",
+    "scratch": "// Scratch is a visual programming language, no text code required"
+};
 
-.ace_wrapper .tabs {
-    display: flex;
-    margin-top: 6px;
-    margin-bottom: 0;
-    -webkit-justify-content:flex-start;
-    justify-content:flex-start;
-}
-
-.ace_wrapper .tab-button {
-    padding: 6px;
-    font-size: 15px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-bottom: none;
-    user-select: none;
-}
-
-.ace_wrapper .tab-button.active {
-    background-color: #337ab7;
-    color: white;
-    /* font-weight: bold; */
-}
-.ace_wrapper .fa{
-    cursor: pointer;
-}
-.fa.fa-code {
-    color: #d40e13;
-    margin-left: 10px;
-}
-
-.ace_wrapper .header .file-name {
-    background-color: transparent;
-    outline: none;
-    border: none;
-    color: white;
-    box-shadow: none;
-    /* border-right: solid 1px #eee; */
-    border-radius: 0;
-    padding-right: 8px;
-    user-select: none;
-    margin: 0;
-    max-width: 70px;
-}
+let languageFileNames = {
+    "c": "main.c",
+    "cpp": "main.cpp",
+    "java": "Main.java",
+    "kotlin": "Main.kt",
+    "pascal": "Main.pas",
+    "pypy": "main.py",
+    "python": "main.py",
+    "scratch": "main.sb3"
+};
 
 
-.ace_wrapper .tab-content {
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: none;
+document.getElementById("theme").addEventListener("change", function () {
+    editor.setTheme("ace/theme/" + this.value);
+    localStorage.setItem("theme", this.value);
+});
+
+document.getElementById("language").addEventListener("change", function () {
+    const selectedLang = this.value;
+
+    if (selectedLang == 'c' || selectedLang == 'cpp') {
+        editor.session.setMode("ace/mode/c_cpp");
+    } else {
+        editor.session.setMode("ace/mode/" + selectedLang);
+    };
+
+    localStorage.setItem("language", selectedLang);
+    editor.setValue(languageCodeSamples[selectedLang]);
+    editor.clearSelection();
+    const fileName = languageFileNames[selectedLang];
+    document.querySelector(".ace_wrapper .file-name").value = fileName;
+});
+
+document.getElementById("language").value = savedLanguage;
+document.getElementById("theme").value = savedTheme;
+if (savedLanguage == 'c' || savedLanguage == 'cpp') {
+    editor.session.setMode("ace/mode/c_cpp");
+} else {
+    editor.session.setMode("ace/mode/" + savedLanguage)
+};
+editor.setValue(languageCodeSamples[savedLanguage]);
+
+editor.clearSelection();
+if (this.value == 'c' || this.value == 'cpp') {
+    editor.setTheme("ace/theme/c_cpp");
+} else {
+    editor.setTheme("ace/theme/" + savedTheme)
+};
+function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    const index = tabId === 'input-tab' ? 0 : 1;
+    document.querySelectorAll('.tab-button')[index].classList.add('active');
 }
 
-.ace_wrapper .tab-content.active {
-    display: block;
-}
+let websocket = new WebSocket("ws://localhost:8000/run_terminal/");
+let terminal = document.getElementById("terminal");
+let input = document.getElementById("input");
 
-.ace_wrapper select,
-button {
-    margin-top: 10px;
-}
-.ide-btn{
-    cursor: pointer;
-    margin-left: 4px;
-}
-
-#page-container.ide-open{
-    display: flex;
-    max-width: 100% !important;
-    margin: 20px;
-}
-main#content.ide-content{
-    width: 50%;
-    margin: 52px auto auto;
-    padding: 10px 22px;
-
-}
-
-.ace_wrapper{
-    display: none;
-    width: 50%;
-    margin: 36px auto auto;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 55px;
-    z-index: 2;
-    background-color: white;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
-}
-.ace_wrapper .header {
-    background-color: #337ab7;
-    color: white;
-    padding: 6px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.ace_wrapper .header label{
-    padding-bottom: 0;
-}
-.ace_wrapper #language {
-    width: auto;
-}
-.ace_wrapper .header select {
-    margin: 0 12px 0 2px !important;
-}
-
-.ace_wrapper select,
-button {
-    margin-top: 0px;
-    font-size: 14px;
-    padding: 4px 2px;
-    border-radius: 2px;
-}
-
-.ace_wrapper select,
-button:focus {
-    outline: none;
-    border: none
-}
-
-.ace_wrapper .tab-content:focus-visible {
-    border: none;
-    outline: none;
-}
-
-.ace_wrapper textarea {
-    border: none;
-    outline: none;
-    font-size: 15px;
-    box-shadow: none;
-}
-
-.ace_wrapper textarea:focus {
-    outline: none;
-}
-.ace_wrapper textarea:hover {
-    outline: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.ace_wrapper .tabs .input-btn {
-    border-top-left-radius: 2px;
-}
-
-.ace_wrapper .tabs .output-btn {
-    border-top-right-radius: 2px;
-}
-
-/* #terminal{
-    border: none;
-    outline: none;
-} */
-.ace_wrapper .ace_editor {
-    font: 15px / normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
-    direction: ltr;
-    text-align: left;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-.flex{
-    display: flex;
-    align-items: center;
-}
-
-.ace_wrapper .file_name-wrapper{
-    margin: 0 auto 0 0;
-}
-.ace_wrapper .fa-download{
-    padding: 2px 10px 2px 0px;
-    margin-left: 6px;
-
-}
-.ace_wrapper .submit-btn {
-    background-color: #337ab7;
-    color: white;
-    padding: 4px 16px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: none;
-    margin-top: 2px;
-}
-
-.ace_wrapper button,
-select:hover {
-    cursor: pointer;
-}
-
-.ace_wrapper .submit-btn:hover {
-    cursor: pointer;
-}
-
-@media (max-width: 767px) {
-    #page-container.ide-open{
-        display: block;
-        max-width: auto;
-        margin: 0 auto;
+websocket.onmessage = function (event) {
+    const data = event.data;
+    if (data.includes("Error")) {
+        terminal.value = data + '\n';
+    } else {
+        terminal.value = data;
     }
-    main#content.ide-content{
-        width: auto;
-        margin: 52px auto auto;
-        padding: 10px 22px;
-    
-    }
+};
 
-    .ace_wrapper {
-        width: 100%;
-        margin: 0px auto auto;
-        padding: 10px 22px;
-        /* position: -webkit-sticky; */
-        /* position:absolute; */
-        /* top: 55px; */
-        z-index: 2;
-        background-color: white;
-        box-sizing: border-box;
-        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+function saveFile() {
+    let code = editor.getValue();
+    let filename = document.querySelector('.ace_wrapper .file-name').value || "main.c";
+    if (!filename) return; 
+
+    let blob = new Blob([code], { type: 'text/plain;charset=utf-8' });
+    let link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+
+
+function showIde(){
+    document.querySelector('.ace_wrapper').style.display = 'block';
+    document.querySelector('.ide-btn').style.display = 'none';
+    document.querySelector('#page-container').classList.add('ide-open');
+    document.querySelector('main#content').classList.add('ide-content');
+    const pdfContainer = document.querySelector('object#pdfContainer');
+
+    if (pdfContainer) {
+        const contentLeft = document.querySelector('#content-left.split-common-content');
+        if (contentLeft) contentLeft.classList.add('ide-active');
+
+        const commonContent = document.querySelector('#common-content');
+        if (commonContent) commonContent.classList.add('ide-active');
+
+        const contentRight = document.querySelector('#content-body #content-right');
+        if (contentRight) contentRight.classList.add('ide-active');
     }
 }
 
-@media (max-width: 700px) {
-    #content-body #content-right {
-        max-width: none;
+function hideIde(){
+    document.querySelector('.ace_wrapper').style.display = 'none';
+    document.querySelector('.ide-btn').style.display = 'block';
+    document.querySelector('#page-container').classList.remove('ide-open');
+    document.querySelector('main#content').classList.remove('ide-content');
+    const pdfContainer = document.querySelector('object#pdfContainer');
+
+    if (pdfContainer) {
+        const contentLeft = document.querySelector('#content-left.split-common-content');
+        if (contentLeft) contentLeft.classList.remove('ide-active');
+
+        const commonContent = document.querySelector('#common-content');
+        if (commonContent) commonContent.classList.remove('ide-active');
+
+        const contentRight = document.querySelector('#content-body #content-right');
+        if (contentRight) contentRight.classList.remove('ide-active');
     }
 }
 
-@media (min-width: 700px) and (max-width: 1439px) {
-    #content-left.split-common-content {
-        width: 27%;
-    }
-    #content-left.split-common-content:has(object#pdfContainer).ide-active {
-        width: 27% !important;
-    }
-    #common-content:has(object#pdfContainer).ide-active {
-        width: 100%;
-        flex-direction: column-reverse;
-    }
-    #content-body:has(object#pdfContainer) #content-right.ide-active {
-        max-width: none;
-    }
+function runCode() {
+    let code = editor.getValue();
+    let inputText = input.value;
+    websocket.send(JSON.stringify({
+        code: code,
+        input_data: inputText
+    }));
+    terminal.value = "Running code...\n";
+    showTab('output-tab');
 }
+
